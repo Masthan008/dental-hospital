@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "services": "Servicios",
+    "team": "Nuestro Equipo",
+    "patientInfo": "Información del Paciente",
+    "gallery": "Galería",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "booking": "Reservar Cita"
+  },
+  "hero": {
+    "title": "Tu Sonrisa, Nuestra Prioridad",
+    "subtitle": "Cuidado dental experto para toda la familia en un ambiente cómodo y moderno.",
+    "ctaPrimary": "Reservar Cita",
+    "ctaSecondary": "Nuestros Servicios",
+    "emergency": "¿Emergencia? Llame Ahora"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Cuidado dental integral para todas las edades"
+  },
+  "testimonials": {
+    "title": "Lo Que Dicen Nuestros Pacientes",
+    "subtitle": "No se fíe solo de nuestra palabra"
+  },
+  "cta": {
+    "title": "¿Listo para Transformar tu Sonrisa?",
+    "subtitle": "Reserve su cita hoy y experimente la diferencia.",
+    "button": "Reservar Ahora"
+  },
+  "footer": {
+    "about": "Sobre Nosotros",
+    "quickLinks": "Enlaces Rápidos",
+    "contact": "Contáctenos",
+    "hours": "Horario de Atención",
+    "rights": "Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  }
+}

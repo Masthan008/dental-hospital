@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "firstTimeVisit": {
+      "title": "First-Time Visit Guide",
+      "content": {
+        "whatToExpect": "During your first visit, you'll meet with our friendly staff who will guide you through our office and introduce you to your dental care team. We'll review your medical history and discuss any concerns you may have.",
+        "requiredDocuments": "Please bring your ID, insurance card, list of current medications, and any previous dental records. If you have dental insurance, bring your insurance card and any necessary forms.",
+        "preparationTips": "Arrive 15 minutes early to complete any remaining paperwork. If you have dental anxiety, let us know in advance so we can make you more comfortable.",
+        "officeTour": "We'll give you a tour of our modern, state-of-the-art facility to help you feel at home. See our treatment rooms, sterilization area, and the latest dental technology we use."
+      }
+    },
+    "insurancePayment": {
+      "title": "Insurance & Payment Options",
+      "content": {
+        "acceptedInsurance": "We accept most major dental insurance plans including Delta Dental, Cigna, Aetna, and many more. Our team will work with your insurance provider to maximize your benefits.",
+        "paymentPlans": "We offer flexible payment plans to help make dental care affordable. Options include interest-free payment plans and extended payment arrangements through third-party financing.",
+        "financingOptions": "We partner with CareCredit and other financing companies to provide low- and no-interest payment plans. Apply online or in our office for quick approval.",
+        "costEstimates": "We provide transparent pricing and detailed treatment plans with cost estimates before any procedure. Ask about our new patient specials and family discounts."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "message": "The page you're looking for doesn't exist or has been moved.",
+    "backButton": "Back to Patient Information"
+  },
+  "backButton": "Back to All Information",
+  "needHelp": {
+    "title": "Need More Help?",
+    "message": "Our friendly staff is here to answer any questions you may have about our services, insurance, or payment options.",
+    "contactButton": "Contact Us",
+    "faqButton": "View FAQ"
+  }
+}

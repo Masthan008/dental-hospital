@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "firstTimeVisit": {
+      "title": "Guía para la Primera Visita",
+      "content": {
+        "whatToExpect": "Durante su primera visita, se reunirá con nuestro amable personal que lo guiará por nuestra oficina y lo presentará a su equipo de atención dental. Revisaremos su historial médico y discutiremos cualquier inquietud que pueda tener.",
+        "requiredDocuments": "Por favor traiga su identificación, tarjeta de seguro, lista de medicamentos actuales y cualquier registro dental previo. Si tiene seguro dental, traiga su tarjeta de seguro y los formularios necesarios.",
+        "preparationTips": "Llegue 15 minutos antes para completar cualquier papeleo pendiente. Si tiene ansiedad dental, infórmenos con anticipación para que podamos hacer que se sienta más cómodo.",
+        "officeTour": "Le daremos un recorrido por nuestras instalaciones modernas y de última generación para que se sienta como en casa. Conozca nuestras salas de tratamiento, área de esterilización y la última tecnología dental que utilizamos."
+      }
+    },
+    "insurancePayment": {
+      "title": "Seguro y Opciones de Pago",
+      "content": {
+        "acceptedInsurance": "Aceptamos la mayoría de los principales planes de seguro dental, incluyendo Delta Dental, Cigna, Aetna y muchos más. Nuestro equipo trabajará con su proveedor de seguros para maximizar sus beneficios.",
+        "paymentPlans": "Ofrecemos planes de pago flexibles para ayudar a que el cuidado dental sea asequible. Las opciones incluyen planes de pago sin intereses y arreglos de pago extendidos a través de financiamiento de terceros.",
+        "financingOptions": "Nos asociamos con CareCredit y otras compañías de financiamiento para ofrecer planes de pago con bajos o ningún interés. Solicite en línea o en nuestra oficina para una aprobación rápida.",
+        "costEstimates": "Proporcionamos precios transparentes y planes de tratamiento detallados con estimaciones de costos antes de cualquier procedimiento. Pregunte por nuestras ofertas especiales para pacientes nuevos y descuentos familiares."
+      }
+    }
+  },
+  "notFound": {
+    "title": "Página No Encontrada",
+    "message": "La página que busca no existe o ha sido movida.",
+    "backButton": "Volver a Información del Paciente"
+  },
+  "backButton": "Volver a Toda la Información",
+  "needHelp": {
+    "title": "¿Necesita Más Ayuda?",
+    "message": "Nuestro amable personal está aquí para responder cualquier pregunta que pueda tener sobre nuestros servicios, seguros o opciones de pago.",
+    "contactButton": "Contáctenos",
+    "faqButton": "Ver Preguntas Frecuentes"
+  }
+}

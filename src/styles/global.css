@@ -1,0 +1,126 @@
+/* Global Text Size Adjustments */
+html {
+  font-size: 15px; /* Slightly reduced from default 16px */
+  line-height: 1.5;
+}
+
+/* Scale down all text sizes proportionally */
+h1 {
+  font-size: 2.25rem; /* 36px */
+  line-height: 2.5rem; /* 40px */
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem; /* 48px */
+    line-height: 1;
+  }
+}
+
+h2 {
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.25rem; /* 36px */
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.25rem; /* 36px */
+    line-height: 2.5rem; /* 40px */
+  }
+}
+
+h3 {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
+  }
+}
+
+p, li, a, button, input, textarea, select {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.5rem; /* 24px */
+}
+
+@media (min-width: 768px) {
+  p, li, a, button, input, textarea, select {
+    font-size: 1rem; /* 16px */
+    line-height: 1.5rem; /* 24px */
+  }
+}
+
+/* Floating Window Adjustments */
+.floating-cta {
+  transform: scale(0.9); /* Slightly smaller */
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.floating-cta:hover {
+  transform: scale(0.95); /* Slightly larger on hover */
+}
+
+/* Hero Section Styling */
+.hero-section {
+  min-height: 80vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sticky Header Animation */
+.sticky-header {
+  transition: all 0.3s ease;
+}
+
+.sticky-header.scrolled {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Accessibility Improvements */
+:focus-visible {
+  outline: 2px solid #2563eb; /* blue-600 */
+  outline-offset: 2px;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .hero-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Darker overlay in dark mode */
+  }
+}

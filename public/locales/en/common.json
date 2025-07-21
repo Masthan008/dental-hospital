@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "team": "Our Team",
+    "patientInfo": "Patient Info",
+    "gallery": "Gallery",
+    "blog": "Blog",
+    "contact": "Contact",
+    "booking": "Book Appointment"
+  },
+  "hero": {
+    "title": "Your Smile, Our Priority",
+    "subtitle": "Expert dental care for the whole family in a comfortable and modern environment.",
+    "ctaPrimary": "Book an Appointment",
+    "ctaSecondary": "Our Services",
+    "emergency": "Emergency? Call Now"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive dental care for all ages"
+  },
+  "testimonials": {
+    "title": "What Our Patients Say",
+    "subtitle": "Don't just take our word for it"
+  },
+  "cta": {
+    "title": "Ready to Transform Your Smile?",
+    "subtitle": "Book your appointment today and experience the difference.",
+    "button": "Schedule Now"
+  },
+  "footer": {
+    "about": "About Us",
+    "quickLinks": "Quick Links",
+    "contact": "Contact Us",
+    "hours": "Working Hours",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}
