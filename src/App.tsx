@@ -1,4 +1,3 @@
-
 import { Suspense, useEffect, useState } from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -117,7 +116,7 @@ const App = () => {
                 <Route path="/services/:serviceId" element={<ServiceDetail />} />
                 <Route path="/team" element={<Team />} />
                 <Route path="/patient-info" element={<PatientInfo />} />
-                <Route path="/patient-info/:slug" element={<PatientInfoDetail />} />
+                <Route path="/patient-info/:sectionId" element={<PatientInfoDetail />} />
                 <Route path="/video-testimonials" element={<VideoTestimonials />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/booking" element={<Booking />} />

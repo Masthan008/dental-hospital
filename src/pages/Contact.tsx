@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
@@ -39,7 +38,7 @@ const Contact = () => {
       title: "Phone Numbers",
       details: [
         { label: "Main Office", value: "+91 94944 44027" },
-        { label: "Secondary", value: "+91 8499995554" },
+        { label: "Secondary", value: "+91 84999 95554" },
         { label: "Emergency Line", value: "+91 94944 44027" }
       ],
       color: "from-green-500 to-emerald-500"
@@ -159,14 +158,14 @@ const Contact = () => {
             data-aos-delay="100"
           >
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.201552210997!2d78.0489!3d15.8287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5d7aedc000001%3A0x6a7e5fd1a543d6b9!2sSri%20Ananth%20Dental%20Hospital!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.123456789012!2d78.4820!3d17.3380!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb8d4f1a1a1a1b%3A0x1a1a1a1a1a1a1a1a!2sSri%20Ananth%20Dental%20Hospital!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
               allowFullScreen 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
-              title="Office Location"
+              title="Sri Ananth Dental Hospital Location"
             ></iframe>
           </div>
         </section>
