@@ -10,25 +10,25 @@ export const ContactSection = () => {
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+1 (555) 123-4567", "Emergency: +1 (555) 987-6543"],
+      details: ["+91 94944 44027", "Emergency: +91 94944 44027"],
       color: "from-green-500 to-emerald-500"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      details: ["123 Dental Street", "City, ST 12345"],
+      details: ["Sri Ananth Dental Hospital", "Near RTC Complex", "Kurnool, Andhra Pradesh - 518001"],
       color: "from-blue-500 to-cyan-500"
     },
     {
       icon: Clock,
       title: "Office Hours",
-      details: ["Mon-Fri: 8:00 AM - 6:00 PM", "Sat: 9:00 AM - 4:00 PM"],
+      details: ["Mon-Sat: 8:00 AM - 9:00 PM", "Sun: 10:00 AM - 4:00 PM"],
       color: "from-purple-500 to-pink-500"
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["info@dentalcareplus.com", "appointments@dentalcareplus.com"],
+      details: ["sriananthdentalhospital@gmail.com"],
       color: "from-orange-500 to-red-500"
     }
   ];
@@ -38,10 +38,10 @@ export const ContactSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Get in <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Touch</span>
+            Contact <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Us</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to schedule your appointment? We're here to help you achieve the smile of your dreams.
+            Ready to schedule your appointment? We're here to help you achieve a healthy, beautiful smile.
           </p>
         </div>
 
@@ -67,17 +67,19 @@ export const ContactSection = () => {
             ))}
 
             {/* WhatsApp Card */}
-            <Card className="bg-gradient-to-r from-green-500 to-emerald-500 text-white cursor-pointer hover:scale-105 transition-all duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-center space-x-4">
-                  <MessageCircle className="h-8 w-8" />
-                  <div>
-                    <h3 className="font-bold text-lg">WhatsApp Us</h3>
-                    <p className="text-green-100 text-sm">Quick questions? Message us directly!</p>
+            <a href="https://wa.me/919494444027" target="_blank" rel="noopener noreferrer">
+              <Card className="bg-gradient-to-r from-green-500 to-emerald-500 text-white cursor-pointer hover:scale-105 transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-4">
+                    <MessageCircle className="h-8 w-8" />
+                    <div>
+                      <h3 className="font-bold text-lg">WhatsApp Us</h3>
+                      <p className="text-green-100 text-sm">Quick questions? Message us directly!</p>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </a>
           </div>
 
           {/* Contact Form */}
@@ -167,18 +169,17 @@ export const ContactSection = () => {
         </div>
 
         {/* Map Section */}
-        <div className="mt-16">
-          <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg overflow-hidden">
-            <CardContent className="p-0">
-              <div className="h-64 bg-gradient-to-r from-blue-100 to-cyan-100 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Our Location</h3>
-                  <p className="text-gray-600">Interactive map will be embedded here</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+        <div className="mt-16 rounded-xl overflow-hidden shadow-lg">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.201552210997!2d78.0489!3d15.8287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5d7aedc000001%3A0x6a7e5fd1a543d6b9!2sSri%20Ananth%20Dental%20Hospital!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="450" 
+            style={{ border: 0 }} 
+            allowFullScreen 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Sri Ananth Dental Hospital Location"
+          ></iframe>
         </div>
       </div>
     </section>

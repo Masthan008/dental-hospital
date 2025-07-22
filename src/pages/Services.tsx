@@ -9,11 +9,24 @@ import { useNavigate } from "react-router-dom";
 import { HeroSection } from "@/components/HeroSection";
 import { useTranslation } from 'react-i18next';
 import { services } from "@/data/services";
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Services = () => {
   const { t } = useTranslation('common');
   const navigate = useNavigate();
   const featuredServices = services.filter(service => service.popular);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false,
+      offset: 100
+    });
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -27,7 +40,11 @@ const Services = () => {
       {/* Featured Services */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div 
+            className="text-center mb-12"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               {t('services.featuredServices', 'Our Featured Services')}
             </h2>
@@ -42,6 +59,8 @@ const Services = () => {
                 key={index} 
                 className="group hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:scale-105 cursor-pointer"
                 onClick={() => navigate(`/services/${service.id}`)}
+                data-aos="fade-up"
+                data-aos-delay={100 * (index % 3) + 100}
               >
                 <Badge className="absolute top-4 right-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white z-10">
                   {t('popular', 'Popular')}

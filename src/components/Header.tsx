@@ -27,13 +27,17 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-blue-100">
+      {/* Remove extra gap at the top */}
+      <style jsx global>{`n        body { margin: 0; padding: 0; }
+      `}</style>
+      
       {/* Top bar with contact info */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-1 px-4 text-xs md:text-sm">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="flex flex-wrap justify-center gap-2 md:gap-6">
             <span className="flex items-center">
               <Phone className="h-3 w-3 md:h-4 md:w-4 mr-1" />
-              {t('hero.emergency')}: +1 (555) 123-4567
+              {t('hero.emergency')}: +91 94944 44027
             </span>
             <span className="flex items-center">
               <Clock className="h-3 w-3 md:h-4 md:w-4 mr-1" />
@@ -42,7 +46,7 @@ export const Header = () => {
           </div>
           <div className="hidden md:flex items-center">
             <MapPin className="h-3 w-3 md:h-4 md:w-4 mr-1" />
-            123 Dental Street, City, ST 12345
+            Sri Ananth Dental Hospital, Near RTC Complex, Kurnool, Andhra Pradesh - 518001
           </div>
         </div>
       </div>
@@ -50,22 +54,27 @@ export const Header = () => {
       {/* Main navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0 cursor-pointer" onClick={() => navigate("/")}>
-            <img 
-              src={logoPath}
-              alt="SmileCure Dental Logo" 
-              className="h-10 w-auto"
-              onError={(e) => {
-                // Fallback to text if image fails to load
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-                const fallback = document.createElement('div');
-                fallback.className = 'text-xl font-bold text-blue-700';
-                fallback.textContent = 'SmileCure Dental';
-                target.parentNode?.insertBefore(fallback, target.nextSibling);
-              }}
-            />
+          {/* Logo and Clinic Name */}
+          <div className="flex items-center space-x-3">
+            <div className="flex-shrink-0">
+              <img 
+                src={logoPath}
+                alt="Sri Ananth Dental Hospital Logo" 
+                className="h-10 w-auto"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                }}
+              />
+            </div>
+            <div 
+              className="cursor-pointer" 
+              onClick={() => navigate("/")}
+            >
+              <h1 className="text-xl font-bold text-blue-800 hover:text-blue-700 transition-colors">
+                Sri Ananth Dental Hospital
+              </h1>
+            </div>
           </div>
 
           {/* Desktop Navigation */}

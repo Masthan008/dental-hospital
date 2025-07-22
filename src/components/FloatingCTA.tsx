@@ -78,7 +78,7 @@ export const FloatingCTA = () => {
       description: "Available 24/7 for dental emergencies",
       action: () => {
         setShowOptions(false);
-        window.open("tel:+1234567890");
+        window.open("tel:+919494444027");
       },
       color: "bg-red-600 hover:bg-red-700"
     },
@@ -88,7 +88,7 @@ export const FloatingCTA = () => {
       description: "Chat with our support team",
       action: () => {
         setShowOptions(false);
-        window.open("https://wa.me/1234567890");
+        window.open("https://wa.me/919494444027");
       },
       color: "bg-emerald-600 hover:bg-emerald-700"
     },
@@ -98,8 +98,7 @@ export const FloatingCTA = () => {
       description: "Ask us anything about dental care",
       action: () => {
         setShowOptions(false);
-        // Implement your quick question modal or chat here
-        console.log("Quick question clicked");
+        window.open("mailto:sriananthdentalhospital@gmail.com?subject=Quick%20Question");
       },
       color: "bg-purple-600 hover:bg-purple-700"
     }
@@ -113,107 +112,105 @@ export const FloatingCTA = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4">
-      {/* Back to top button */}
-      {isVisible && (
-        <motion.button
-          onClick={scrollToTop}
-          className={cn(
-            "w-12 h-12 rounded-full bg-gray-800 text-white flex items-center justify-center shadow-lg",
-            "hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-          )}
-          aria-label="Back to top"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-        >
-          <ArrowUp className="w-5 h-5" />
-        </motion.button>
-      )}
-
-      {/* Main CTA */}
-      {/* Options Menu */}
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4" style={{ width: 'auto', maxWidth: '90vw' }}>
       <AnimatePresence>
-        {showOptions && (
+        {isMounted && isVisible && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="mb-4"
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 100 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            className="fixed bottom-4 right-4 z-50 flex flex-col items-end space-y-2"
           >
-            <Card className="w-72 p-3 space-y-2 shadow-xl bg-white/95 backdrop-blur-sm">
-              <h3 className="text-sm font-medium text-gray-700 px-2 py-1">How can we help you today?</h3>
-              <div className="space-y-2">
-                {actions.map((action, index) => (
-                  <motion.button
-                    key={action.label}
-                    whileHover={{ x: 4 }}
-                    whileTap={{ scale: 0.98 }}
-                    onClick={action.action}
-                    className={cn(
-                      "w-full flex items-center gap-3 p-3 rounded-lg text-left transition-colors",
-                      "hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                    )}
-                  >
-                    <div className={`p-2 rounded-full ${action.color} text-white`}>
-                      <action.icon className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <div className="font-medium text-gray-900">{action.label}</div>
-                      {action.description && (
-                        <div className="text-xs text-gray-500">{action.description}</div>
-                      )}
-                    </div>
-                  </motion.button>
-                ))}
-              </div>
-            </Card>
+            {showOptions && (
+              <motion.div
+                initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+                className="origin-bottom-right"
+              >
+                <Card className="p-2 shadow-lg rounded-xl w-56 bg-white/95 backdrop-blur-sm border border-gray-100">
+                  <div className="space-y-2">
+                    {actions.map((action, index) => (
+                      <motion.div
+                        key={action.label}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.03 }}
+                        className="flex items-center p-1.5 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
+                        onClick={action.action}
+                      >
+                        <div className={`p-1.5 rounded-full ${action.color} text-white mr-2`}>
+                          <action.icon className="h-3.5 w-3.5" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-xs">{action.label}</p>
+                          {action.description && (
+                            <p className="text-[10px] text-gray-500">{action.description}</p>
+                          )}
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </Card>
+              </motion.div>
+            )}
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={cn(
+                "relative rounded-full shadow-md overflow-hidden",
+                showOptions ? 'ring-2 ring-blue-500' : ''
+              )}
+              onHoverStart={() => setIsHovered(true)}
+              onHoverEnd={() => !showOptions && setIsHovered(false)}
+            >
+              <Button
+                ref={buttonRef}
+                size="sm"
+                className={cn(
+                  "rounded-full h-12 w-12 p-0 relative overflow-hidden transition-all duration-300 text-sm",
+                  showOptions ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-600 hover:bg-blue-700',
+                  isHovered ? 'w-32' : 'w-12'
+                )}
+                onClick={() => setShowOptions(!showOptions)}
+                aria-label={showOptions ? 'Close menu' : 'Quick actions'}
+              >
+                <motion.div
+                  className="absolute inset-0 flex items-center justify-center"
+                  animate={showOptions ? { rotate: 180 } : { rotate: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {showOptions ? (
+                    <X className="h-4 w-4 text-white" />
+                  ) : (
+                    <motion.div
+                      animate={isHovered ? { x: -16, opacity: 0 } : { x: 0, opacity: 1 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute"
+                    >
+                      <MessageSquarePlus className="h-4 w-4 text-white" />
+                    </motion.div>
+                  )}
+                </motion.div>
+                <motion.span
+                  className="whitespace-nowrap text-white text-xs font-medium"
+                  initial={{ opacity: 0, x: 16 }}
+                  animate={{
+                    opacity: isHovered && !showOptions ? 1 : 0,
+                    x: isHovered && !showOptions ? 0 : 16,
+                  }}
+                  transition={{ duration: 0.15 }}
+                >
+                  Need Help?
+                </motion.span>
+              </Button>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
-
-      <motion.button
-        ref={buttonRef}
-        className={cn(
-          "relative flex items-center justify-center rounded-full h-16 w-16 shadow-xl",
-          "bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800",
-          "text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200",
-          showOptions && "rotate-45"
-        )}
-        onClick={() => setShowOptions(!showOptions)}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        aria-label={showOptions ? 'Close menu' : 'Quick actions'}
-        aria-expanded={showOptions}
-        initial={false}
-        animate={{
-          scale: isHovered ? 1.05 : 1,
-          rotate: showOptions ? 45 : 0,
-        }}
-        transition={{ type: 'spring', damping: 20, stiffness: 300 }}
-      >
-        <motion.span
-          className="absolute"
-          initial={false}
-          animate={{ rotate: showOptions ? 90 : 0 }}
-          transition={{ duration: 0.2 }}
-        >
-          {showOptions ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <motion.span
-              initial={false}
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ repeat: Infinity, duration: 2, repeatDelay: 3 }}
-              className="text-xl font-bold"
-            >
-              <MessageCircle className="h-6 w-6" />
-            </motion.span>
-          )}
-        </motion.span>
-      </motion.button>
     </div>
   );
 };

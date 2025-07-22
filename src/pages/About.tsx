@@ -8,10 +8,23 @@ import { Award, Users, Heart, Shield, Play, Star, CheckCircle } from "lucide-rea
 import { useNavigate } from "react-router-dom";
 import { HeroSection } from "@/components/HeroSection";
 import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const About = () => {
   const { t } = useTranslation('common');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false,
+      offset: 100
+    });
+  }, []);
 
   const achievements = [
     { icon: Award, title: "Best Dental Practice 2023", description: "Recognized by State Dental Association" },
@@ -52,42 +65,57 @@ const About = () => {
       <main className="pt-12">
         {/* Our Story Section */}
         <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <h1 className="text-4xl font-bold text-gray-900">About DentalCare+</h1>
-                <p className="text-xl text-gray-600">
-                  Creating beautiful, healthy smiles for over 15 years with compassionate care and cutting-edge technology.
+          <div className="container mx-auto px-4 py-16">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div 
+                className="space-y-6"
+                data-aos="fade-right"
+                data-aos-delay="100"
+              >
+                <h2 className="text-3xl font-bold text-gray-900">Our Story</h2>
+                <p className="text-lg text-gray-600">
+                  Founded in 2008, our practice has been providing exceptional dental care to the community for over 15 years. 
+                  What started as a small practice with a single treatment room has grown into a state-of-the-art facility 
+                  with a team of dedicated professionals.
                 </p>
-                <div className="space-y-4 text-lg text-gray-600">
-                  <p>
-                    Founded in 2008 by Dr. Sarah Johnson, DentalCare+ began with a simple mission: to provide exceptional dental care in a comfortable, welcoming environment. What started as a small practice has grown into a comprehensive dental clinic serving thousands of patients.
-                  </p>
-                  <p>
-                    Our journey has been marked by continuous innovation, from being the first practice in the area to offer digital X-rays to pioneering minimally invasive procedures. We've always believed that staying at the forefront of dental technology allows us to provide better care for our patients.
-                  </p>
-                  <p>
-                    Today, we're proud to be a trusted partner in our community's oral health, with a team of skilled professionals dedicated to helping you achieve and maintain your best smile.
-                  </p>
-                </div>
+                <p className="text-lg text-gray-600">
+                  Our commitment to excellence and patient-centered care has earned us recognition as one of the top dental 
+                  practices in the region. We believe in building lasting relationships with our patients based on trust, 
+                  transparency, and exceptional service.
+                </p>
+                <Button 
+                  onClick={() => navigate('/team')} 
+                  className="bg-blue-600 hover:bg-blue-700"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  Meet Our Team <Users className="ml-2 h-4 w-4" />
+                </Button>
               </div>
-              <div className="relative">
-                <Card className="bg-gradient-to-br from-blue-600 to-cyan-600 text-white">
-                  <CardContent className="p-8">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <h3 className="text-2xl font-bold mb-2">Take a Virtual Tour</h3>
-                        <p className="text-blue-100">See our state-of-the-art facilities</p>
-                      </div>
-                      <Button 
-                        size="icon" 
-                        className="bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full w-16 h-16"
-                      >
-                        <Play className="h-8 w-8 text-white" />
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
+              <div 
+                className="relative h-96 rounded-xl overflow-hidden shadow-xl"
+                data-aos="fade-left"
+                data-aos-delay="100"
+              >
+                <img 
+                  src="/images/about/dentist-office.jpg" 
+                  alt="Modern dental office"
+                  className="w-full h-full object-cover"
+                  data-aos="zoom-in"
+                  data-aos-delay="200"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+                  <Button 
+                    variant="outline" 
+                    className="bg-white/90 hover:bg-white text-blue-600 border-0 flex items-center space-x-2"
+                    onClick={() => window.open('https://www.youtube.com/watch?v=example', '_blank')}
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
+                    <Play className="h-4 w-4" />
+                    <span>Watch Our Story</span>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -96,22 +124,34 @@ const About = () => {
         {/* Values Section */}
         <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Values</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                These core values guide everything we do and shape the experience we create for our patients.
+            <div 
+              className="mt-20 text-center"
+              data-aos="fade-up"
+            >
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+                Guiding principles that shape our practice and define the care we provide
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {values.map((value, index) => (
-                <Card key={index} className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle className="h-8 w-8 text-white" />
+                <Card 
+                  key={index} 
+                  className="h-full hover:shadow-lg transition-shadow duration-300"
+                  data-aos="fade-up"
+                  data-aos-delay={100 * (index + 1)}
+                >
+                  <CardContent className="p-6">
+                    <div 
+                      className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto"
+                      data-aos="zoom-in"
+                      data-aos-delay={150 * (index + 1)}
+                    >
+                      <Star className="h-6 w-6 text-blue-600" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{value.title}</h3>
-                    <p className="text-gray-600">{value.description}</p>
+                    <h3 className="text-xl font-semibold text-center mb-2">{value.title}</h3>
+                    <p className="text-gray-600 text-center">{value.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -172,27 +212,27 @@ const About = () => {
 
         {/* CTA Section */}
         <section className="py-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Experience the Difference?</h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Join thousands of satisfied patients who have made DentalCare+ their trusted dental home.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                onClick={() => navigate("/booking")}
-                size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
-              >
-                Schedule Your Visit
-              </Button>
-              <Button 
-                onClick={() => navigate("/team")}
-                variant="outline" 
-                size="lg" 
-                className="border-blue-300 text-blue-600 hover:bg-blue-50 px-8 py-3 rounded-full transition-all duration-300"
-              >
-                Meet Our Team
-              </Button>
+          <div className="container mx-auto px-4">
+            <div 
+              className="bg-blue-50 rounded-2xl p-8 md:p-12"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div className="max-w-4xl mx-auto text-center">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Us?</h2>
+                <p className="text-lg text-gray-600 mb-8">
+                  Experience the difference with our patient-centered approach and commitment to excellence in dental care.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    onClick={() => navigate('/contact')}
+                    size="lg"
+                    className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105"
+                  >
+                    Schedule Your Visit
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </section>

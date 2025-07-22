@@ -38,7 +38,7 @@ export const AboutPreview = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
-                About <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">DentalCare+</span>
+                About <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Sri Ananth Dental Hospital</span>
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
                 For over 15 years, we've been dedicated to providing exceptional dental care in a comfortable, modern environment. Our team of experienced professionals uses the latest technology to ensure you receive the best possible treatment.

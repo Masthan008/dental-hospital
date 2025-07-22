@@ -131,7 +131,7 @@ const PatientInfo = () => {
               Patient Information
             </h1>
             <p className="text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed">
-              Everything you need to know about visiting DentalCare+. We're here to make your experience as smooth as possible.
+              Everything you need to know about visiting Sri Ananth Dental Hospital. We're here to make your experience as smooth as possible.
             </p>
           </div>
         </div>

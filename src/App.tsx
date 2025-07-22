@@ -8,6 +8,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n/i18n';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -15,6 +17,7 @@ import ServiceDetail from "./pages/services/ServiceDetail";
 import Team from "./pages/Team";
 import PatientInfo from "./pages/PatientInfo";
 import PatientInfoDetail from "./pages/patient-info/PatientInfoDetail";
+import VideoTestimonials from "./pages/VideoTestimonials";
 import Contact from "./pages/Contact";
 import Booking from "./pages/Booking";
 import Emergency from "./pages/Emergency";
@@ -43,10 +46,26 @@ const LoadingFallback = () => (
 const App = () => {
   const [scrolled, setScrolled] = useState(false);
 
+  // Initialize AOS (Animate On Scroll)
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false,
+      offset: 100
+    });
+    
+    // Refresh AOS when language changes
+    AOS.refresh();
+  }, []);
+
   // Set document language and direction on initial load and language change
   useEffect(() => {
     const handleLanguageChange = () => {
       document.documentElement.lang = i18n.language;
+      // Refresh AOS when language changes to ensure animations work with RTL/LTR changes
+      AOS.refresh();
       document.documentElement.dir = i18n.dir(i18n.language);
       
       // Ensure all required namespaces are loaded
@@ -98,7 +117,8 @@ const App = () => {
                 <Route path="/services/:serviceId" element={<ServiceDetail />} />
                 <Route path="/team" element={<Team />} />
                 <Route path="/patient-info" element={<PatientInfo />} />
-                <Route path="/patient-info/:sectionId" element={<PatientInfoDetail />} />
+                <Route path="/patient-info/:slug" element={<PatientInfoDetail />} />
+                <Route path="/video-testimonials" element={<VideoTestimonials />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/booking" element={<Booking />} />
                 <Route path="/emergency" element={<Emergency />} />
