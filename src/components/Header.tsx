@@ -28,25 +28,30 @@ export const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-blue-100">
       {/* Remove extra gap at the top */}
-      <style jsx global>{`n        body { margin: 0; padding: 0; }
+      <style>{`
+        body { margin: 0; padding: 0; }
       `}</style>
       
       {/* Top bar with contact info */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-1 px-4 text-xs md:text-sm">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-          <div className="flex flex-wrap justify-center gap-2 md:gap-6">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4">
             <span className="flex items-center">
               <Phone className="h-3 w-3 md:h-4 md:w-4 mr-1" />
-              {t('hero.emergency')}: +91 94944 44027
+              +91 94944 44027
+            </span>
+            <span className="flex items-center">
+              <Phone className="h-3 w-3 md:h-4 md:w-4 mr-1" />
+              +91 8499995554
             </span>
             <span className="flex items-center">
               <Clock className="h-3 w-3 md:h-4 md:w-4 mr-1" />
-              {t('footer.hours')}: 8AM-6PM
+              Mon-Sat: 9AM-8PM, Sun: 9AM-1PM
             </span>
           </div>
           <div className="hidden md:flex items-center">
             <MapPin className="h-3 w-3 md:h-4 md:w-4 mr-1" />
-            Sri Ananth Dental Hospital, Near RTC Complex, Kurnool, Andhra Pradesh - 518001
+            Opposite RTC Complex, Main Road, Vikarabad, Telangana 501101
           </div>
         </div>
       </div>

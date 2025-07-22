@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { useNavigate } from 'react-router-dom';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Star, Phone, Calendar, Award, GraduationCap, Briefcase, Calendar as CalendarIcon } from 'lucide-react';
+import { Star, Phone, Calendar, Award, GraduationCap, Briefcase, Calendar as CalendarIcon, CheckCircle } from 'lucide-react';
 import { FloatingCTA } from '@/components/FloatingCTA';
 import { HeroSection } from '@/components/HeroSection';
 import { useTranslation } from 'react-i18next';
@@ -86,67 +86,83 @@ const Team = () => {
               {doctors.map((doctor, index) => (
                 <Card 
                   key={doctor.id}
-                  className="group hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:scale-105 cursor-pointer overflow-hidden"
+                  className="group hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:scale-[1.02] cursor-pointer overflow-hidden h-full flex flex-col"
                   onClick={() => handleDoctorClick(doctor.id)}
                   data-aos="fade-up"
                   data-aos-delay={150 * (index % 2) + 100}
                 >
-                  <img 
-                    src={doctor.image} 
-                    alt={doctor.name} 
-                    className="w-full h-72 object-cover"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                    <h3 className="text-2xl font-bold text-white">{doctor.name}</h3>
-                    <p className="text-blue-300">{doctor.title}</p>
+                  <div className="relative overflow-hidden h-80 bg-gray-100">
+                    <div className="relative w-full h-full">
+                      <img 
+                        src={doctor.image} 
+                        alt={doctor.name} 
+                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                        style={{ objectPosition: 'center 30%' }}
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                      <div>
+                        <h3 className="text-2xl font-bold text-white">{doctor.name}</h3>
+                        <p className="text-blue-300 text-lg">{doctor.title}</p>
+                      </div>
+                    </div>
                   </div>
-                  <CardContent className="p-0">
-                    <div className="p-6">
-                      <div className="flex justify-between items-start mb-4">
-                        <div className="flex items-center">
-                          <Star className="w-5 h-5 text-amber-400 fill-current mr-1" />
+                  <CardContent className="p-6 flex-1 flex flex-col">
+                    <div className="space-y-4 flex-1">
+                      <div className="flex items-center text-sm text-gray-500 mb-3">
+                        <div className="flex items-center mr-4">
+                          <Star className="w-4 h-4 text-amber-400 fill-current mr-1" />
                           <span className="font-medium text-gray-900">{doctor.rating}</span>
-                          <span className="mx-2 text-gray-300">•</span>
-                          <span className="text-gray-600">{doctor.reviews} reviews</span>
+                          <span className="mx-1 text-gray-300">•</span>
+                          <span>{doctor.reviews} reviews</span>
+                        </div>
+                        <div className="w-1 h-1 bg-gray-300 rounded-full mx-2"></div>
+                        <div className="flex items-center">
+                          <Briefcase className="w-4 h-4 mr-1 text-blue-600" />
+                          <span>{doctor.experience}</span>
                         </div>
                       </div>
+                      
                       <div className="space-y-4">
                         <div>
                           <h4 className="font-medium text-gray-900 flex items-center">
-                            <Briefcase className="w-4 h-4 mr-2 text-blue-600" />
-                            Experience
-                          </h4>
-                          <p className="text-gray-600 ml-6">{doctor.experience}</p>
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-gray-900 flex items-center">
                             <GraduationCap className="w-4 h-4 mr-2 text-blue-600" />
-                            Education
+                            Education & Qualifications
                           </h4>
-                          <p className="text-gray-600 ml-6">{doctor.education}</p>
+                          <div className="mt-2 space-y-1.5">
+                            {doctor.qualifications ? (
+                              doctor.qualifications.map((qualification, idx) => (
+                                <div key={idx} className="flex items-start">
+                                  <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                                  <span className="text-gray-600 text-sm">{qualification}</span>
+                                </div>
+                              ))
+                            ) : (
+                              <p className="text-gray-600 text-sm ml-6">{doctor.education}</p>
+                            )}
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-medium text-gray-900 flex items-center">
-                            <CalendarIcon className="w-4 h-4 mr-2 text-blue-600" />
-                            Availability
-                          </h4>
-                          <p className="text-gray-600 ml-6">{doctor.availability}</p>
-                        </div>
+                        
                         <div className="pt-2">
                           <h4 className="font-medium text-gray-900 mb-2">Specialties</h4>
                           <div className="flex flex-wrap gap-2">
                             {doctor.specialties.map((specialty, idx) => (
-                              <Badge key={idx} variant="secondary" className="bg-blue-100 text-blue-800 hover:bg-blue-100">
+                              <Badge 
+                                key={idx} 
+                                variant="secondary" 
+                                className="bg-blue-50 text-blue-700 hover:bg-blue-50 text-xs px-2.5 py-1"
+                              >
                                 {specialty}
                               </Badge>
                             ))}
                           </div>
                         </div>
+                        
                         {doctor.achievements && doctor.achievements.length > 0 && (
                           <div className="pt-2">
                             <h4 className="font-medium text-gray-900 mb-2 flex items-center">
                               <Award className="w-4 h-4 mr-2 text-blue-600" />
-                              Qualifications
+                              Achievements
                             </h4>
                             <div className="space-y-2">
                               {doctor.achievements.map((achievement, idx) => (

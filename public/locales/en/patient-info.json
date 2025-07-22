@@ -17,6 +17,46 @@
         "financingOptions": "We partner with CareCredit and other financing companies to provide low- and no-interest payment plans. Apply online or in our office for quick approval.",
         "costEstimates": "We provide transparent pricing and detailed treatment plans with cost estimates before any procedure. Ask about our new patient specials and family discounts."
       }
+    },
+    "patientForms": {
+      "title": "Patient Forms",
+      "content": {
+        "description": "Save time by downloading and completing your patient forms before your appointment.",
+        "medicalHistory": "Medical History Form (Required for all new patients)",
+        "insuranceForms": "Insurance Information and Consent Forms",
+        "consentForms": "Treatment Consent Forms",
+        "registration": "New Patient Registration"
+      }
+    },
+    "treatmentInstructions": {
+      "title": "Treatment Instructions",
+      "content": {
+        "description": "Important information to prepare for your upcoming dental treatment.",
+        "preTreatment": "Pre-Treatment Instructions",
+        "postCare": "Post-Treatment Care",
+        "recoveryTips": "Recovery and Aftercare Tips",
+        "emergencyContacts": "Emergency Contact Information"
+      }
+    },
+    "covidSafety": {
+      "title": "COVID-19 Safety",
+      "content": {
+        "description": "Your health and safety are our top priority. Learn about our enhanced safety measures.",
+        "safetyMeasures": "Enhanced Cleaning and Sanitization",
+        "screeningProcess": "Health Screening Protocols",
+        "ppeProtocols": "PPE and Staff Protection",
+        "cleanEnvironment": "Maintaining a Safe Environment"
+      }
+    },
+    "testimonials": {
+      "title": "Patient Testimonials",
+      "content": {
+        "description": "Hear from our satisfied patients about their experiences at our practice.",
+        "videoTestimonials": "Watch Video Testimonials",
+        "writtenReviews": "Read Patient Reviews",
+        "beforeAfterPhotos": "View Before & After Photos",
+        "successStories": "Patient Success Stories"
+      }
     }
   },
   "notFound": {
@@ -25,10 +65,23 @@
     "backButton": "Back to Patient Information"
   },
   "backButton": "Back to All Information",
+  "learnMore": "Learn More",
   "needHelp": {
     "title": "Need More Help?",
     "message": "Our friendly staff is here to answer any questions you may have about our services, insurance, or payment options.",
     "contactButton": "Contact Us",
     "faqButton": "View FAQ"
+  },
+  "paymentOptions": {
+    "title": "Payment Options",
+    "description": "We offer various payment options to make your dental care affordable and convenient.",
+    "cash": "Cash",
+    "creditCards": "Credit/Debit Cards",
+    "careCredit": "CareCredit Financing",
+    "insurance": "Dental Insurance"
+  },
+  "insuranceProviders": {
+    "title": "Accepted Insurance Providers",
+    "description": "We work with most major dental insurance providers. Don't see your provider listed? Contact us to verify coverage."
   }
 }

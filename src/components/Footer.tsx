@@ -18,7 +18,21 @@ export const Footer = () => {
     { name: "Our Team", href: "/team" },
     { name: "Patient Info", href: "/patient-info" },
     { name: "Contact", href: "/contact" },
-    { name: "Blog", href: "/blog" }
+    { name: "Blog", href: "/blog" },
+    { name: "Appointments", href: "/appointments" },
+    { name: "Testimonials", href: "/testimonials" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "FAQs", href: "/faqs" },
+    { name: "Insurance", href: "/insurance" },
+    { name: "Careers", href: "/careers" }
+  ];
+
+  const stepByStep = [
+    { step: "01", title: "Book Appointment", description: "Schedule your visit online or by phone" },
+    { step: "02", title: "Initial Consultation", description: "Meet our specialists for assessment" },
+    { step: "03", title: "Treatment Plan", description: "Personalized care plan discussion" },
+    { step: "04", title: "Procedure", description: "Expert care from our dental team" },
+    { step: "05", title: "Follow-up", description: "Continued care and support" }
   ];
 
   const services = [
@@ -33,7 +47,7 @@ export const Footer = () => {
   return (
     <footer className="bg-gradient-to-b from-gray-900 to-gray-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
             <div className="space-y-4">
@@ -95,6 +109,26 @@ export const Footer = () => {
             </ul>
           </div>
 
+          {/* Step-by-Step Integration */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4">Our Process</h3>
+            <div className="space-y-4">
+              {stepByStep.map((step, index) => (
+                <div key={index} className="flex items-start space-x-3 group">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-white font-bold text-sm">
+                    {step.step}
+                  </div>
+                  <div>
+                    <h4 className="font-medium text-white group-hover:text-blue-400 transition-colors duration-200">
+                      {step.title}
+                    </h4>
+                    <p className="text-xs text-gray-400">{step.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Contact Info */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact Info</h3>
@@ -103,26 +137,27 @@ export const Footer = () => {
                 <MapPin className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-gray-300">
                   <p>Sri Ananth Dental Hospital</p>
-                  <p>Near RTC Complex, Kurnool</p>
-                  <p>Andhra Pradesh - 518001</p>
+                  <p>Opposite RTC Complex, Main Road</p>
+                  <p>Vikarabad, Telangana 501101</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-blue-400 flex-shrink-0" />
                 <div className="text-sm text-gray-300">
                   <p>+91 94944 44027</p>
-                  <p className="text-blue-300">Emergency: +91 94944 44027</p>
+                  <p>+91 8499995554</p>
+                  <p className="text-blue-300">Available 24/7</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-blue-400 flex-shrink-0" />
-                <p className="text-sm text-gray-300">sriananthdentalhospital@gmail.com</p>
+                <p className="text-sm text-gray-300">dental@sriananthhospital.com</p>
               </div>
               <div className="flex items-start space-x-3">
                 <Clock className="h-5 w-5 text-blue-400 mt-0.5 flex-shrink-0" />
                 <div className="text-sm text-gray-300">
-                  <p>Mon-Sat: 8:00 AM - 9:00 PM</p>
-                  <p>Sun: 10:00 AM - 4:00 PM</p>
+                  <p>Monday - Saturday: 9:00 AM - 8:00 PM</p>
+                  <p>Sunday: 9:00 AM - 1:00 PM</p>
                 </div>
               </div>
             </div>

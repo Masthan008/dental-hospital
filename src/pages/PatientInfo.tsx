@@ -1,7 +1,11 @@
 
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import WelcomePopup from "@/components/WelcomePopup";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -17,14 +21,43 @@ import {
   Star,
   DollarSign,
   Calendar,
-  Users
+  Users,
+  MessageCircle,
+  Phone,
+  MapPin,
+  Mail
 } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+
+// Add global CSS for animations
+const addGlobalStyles = () => {
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .hover-scale {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-scale:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+  `;
+  document.head.appendChild(style);
+};
 
 const PatientInfo = () => {
   const navigate = useNavigate();
   const { t } = useTranslation('patient-info');
+  
+  // Add global styles on component mount
+  useEffect(() => {
+    addGlobalStyles();
+  }, []);
 
   const infoSections = [
     {
@@ -122,116 +155,132 @@ const PatientInfo = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100">
       <Header />
+      <WelcomePopup />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-5xl lg:text-6xl font-bold mb-6">
-              Patient Information
+      <section className="relative py-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center animate-fade-in-up">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              {t('sections.firstTimeVisit.title')}
             </h1>
             <p className="text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed">
-              Everything you need to know about visiting Sri Ananth Dental Hospital. We're here to make your experience as smooth as possible.
+              Everything you need to know about visiting Sri Ananth Dental Hospital. 
+              We're here to make your experience as smooth as possible.
             </p>
+            
+            {/* Quick Contact Bar */}
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <a 
+                href="tel:+919494444027" 
+                className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg hover:bg-white/20 transition-colors"
+              >
+                <Phone className="h-5 w-5" />
+                <span>+91 94944 44027</span>
+              </a>
+              <a 
+                href="https://wa.me/919494444027" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg hover:bg-white/20 transition-colors"
+              >
+                <MessageCircle className="h-5 w-5" />
+                <span>Chat on WhatsApp</span>
+              </a>
+              <a 
+                href="#location" 
+                className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg hover:bg-white/20 transition-colors"
+              >
+                <MapPin className="h-5 w-5" />
+                <span>Our Location</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Info Sections Grid */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {infoSections.map((section, index) => (
-              <Card 
-                key={index} 
-                className="group hover:shadow-2xl transition-all duration-300 bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:scale-105"
-              >
-                <CardHeader className="pb-4">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${section.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <section.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <CardTitle className="text-xl font-bold text-gray-900">{section.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-gray-600">{section.description}</p>
-                  <ul className="space-y-2">
-                    {section.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-gray-700">
-                        <CheckCircle className="h-3 w-3 text-green-500 mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button 
-                    variant="ghost" 
-                    className="group-hover:bg-blue-50 transition-colors duration-200 p-0 h-auto font-medium text-blue-600 hover:text-blue-700"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate(`/patient-info/${section.id}`);
-                    }}
-                  >
-                    {t('learnMore')} →
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Payment & Insurance Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-20 bg-white/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Payment & Insurance</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Your Complete Dental Care Guide
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We offer flexible payment options and work with most insurance providers to make dental care affordable.
+              Everything you need for a comfortable and informed dental visit
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Payment Options */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">Payment Options</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {infoSections.map((infoSection, index) => (
+              <div 
+                key={index}
+                className="animate-fade-in-up" 
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <Card 
+                  className="h-full flex flex-col hover-scale bg-white/80 backdrop-blur-sm border-0 shadow-lg overflow-hidden transition-all duration-300"
+                >
+                  <CardHeader className="pb-4">
+                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-r ${infoSection.color} flex items-center justify-center mb-4`}>
+                      <infoSection.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <CardTitle className="text-xl font-bold text-gray-900">{infoSection.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow space-y-4">
+                    <p className="text-gray-600">{infoSection.description}</p>
+                    <ul className="space-y-2">
+                      {infoSection.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start text-sm text-gray-700">
+                          <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                  <div className="px-6 pb-6">
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-blue-100 bg-white text-blue-600 hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 transition-colors duration-200"
+                      onClick={() => navigate(`/patient-info/${infoSection.id}`)}
+                    >
+                      {t('learnMore')}
+                    </Button>
+                  </div>
+                </Card>
+              </div>
+            ))}
+          </div>
+          
+          {/* Insurance Providers */}
+          <div className="animate-fade-in-up mt-16" style={{ animationDelay: '200ms' }}>
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">
+              {t('insuranceProviders.title')}
+            </h3>
+            <div className="bg-white/80 backdrop-blur-sm border-0 rounded-xl p-6 shadow-lg">
+              <p className="text-gray-600 mb-6">
+                {t('insuranceProviders.description')}
+              </p>
               <div className="grid grid-cols-2 gap-4">
-                {paymentOptions.map((option, index) => (
-                  <Card key={index} className="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                    <CardContent className="p-6 text-center">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <option.icon className="h-6 w-6 text-white" />
-                      </div>
-                      <h4 className="font-semibold text-gray-900 mb-2">{option.name}</h4>
-                      <p className="text-sm text-gray-600">{option.description}</p>
-                    </CardContent>
-                  </Card>
+                {insuranceProviders.map((provider, index) => (
+                  <div 
+                    key={index} 
+                    className="flex items-center bg-gray-50 px-4 py-3 rounded-lg hover:bg-gray-100 transition-colors"
+                  >
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                    <span className="text-sm font-medium text-gray-700">{provider}</span>
+                  </div>
                 ))}
               </div>
-            </div>
-            
-            {/* Insurance Providers */}
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">Accepted Insurance</h3>
-              <Card className="bg-white/80 backdrop-blur-sm border-0 shadow-lg">
-                <CardContent className="p-6">
-                  <div className="grid grid-cols-2 gap-4">
-                    {insuranceProviders.map((provider, index) => (
-                      <div key={index} className="flex items-center space-x-2">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
-                        <span className="text-sm text-gray-700">{provider}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                    <div className="flex items-start space-x-3">
-                      <AlertCircle className="h-5 w-5 text-blue-600 mt-0.5" />
-                      <div>
-                        <p className="text-sm text-blue-800 font-medium">Don't see your insurance?</p>
-                        <p className="text-sm text-blue-700">Contact us to verify coverage. We're constantly adding new providers.</p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="mt-8 space-y-3">
+                <Button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white">
+                  Verify Your Insurance
+                </Button>
+                <Button variant="outline" className="w-full border-gray-200">
+                  Download Insurance Form
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -357,6 +406,23 @@ const PatientInfo = () => {
 
       <Footer />
       <FloatingCTA />
+      
+      {/* Global Styles */}
+      <style>{`
+        @keyframes fadeInUp {
+          from { 
+            opacity: 0; 
+            transform: translateY(20px); 
+          }
+          to { 
+            opacity: 1; 
+            transform: translateY(0); 
+          }
+        }
+        .animate-fade-in-up {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
+      `}</style>
     </div>
   );
 };

@@ -74,14 +74,16 @@ const About = () => {
               >
                 <h2 className="text-3xl font-bold text-gray-900">Our Story</h2>
                 <p className="text-lg text-gray-600">
-                  Founded in 2008, our practice has been providing exceptional dental care to the community for over 15 years. 
-                  What started as a small practice with a single treatment room has grown into a state-of-the-art facility 
-                  with a team of dedicated professionals.
+                  In 2015, a vision for exceptional dental care took root in the heart of Vikarabad. What began as a modest clinic with a single chair has blossomed into <span className="font-semibold text-blue-600">Sri Ananth Dental Hospital</span>, a beacon of oral healthcare excellence in the region. Our journey is one of passion, perseverance, and an unwavering commitment to transforming smiles.
                 </p>
                 <p className="text-lg text-gray-600">
-                  Our commitment to excellence and patient-centered care has earned us recognition as one of the top dental 
-                  practices in the region. We believe in building lasting relationships with our patients based on trust, 
-                  transparency, and exceptional service.
+                  From our humble beginnings, we've grown into a state-of-the-art facility, but our core values remain unchanged. Every day, we're driven by the smiles of our patients and the trust they place in our hands. Our team of dedicated professionals brings together decades of combined experience, ensuring that each patient receives personalized, compassionate care.
+                </p>
+                <p className="text-lg text-gray-600">
+                  At Sri Ananth Dental Hospital, we believe in more than just treating teeth—we're committed to enhancing lives through comprehensive dental care. Our patient-centered approach, combined with cutting-edge technology and evidence-based practices, has made us a trusted name in dental healthcare.
+                </p>
+                <p className="text-lg text-gray-600">
+                  As we continue to grow, our mission remains clear: to provide accessible, high-quality dental care that transforms lives, one smile at a time. Join us on this journey to better oral health and discover the difference that genuine care and expertise can make.
                 </p>
                 <Button 
                   onClick={() => navigate('/team')} 

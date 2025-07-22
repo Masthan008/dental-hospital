@@ -13,11 +13,16 @@ interface HeroSectionProps {
   minHeight?: string;
 }
 
-// Array of background images for the hero section
+// Array of background images for the hero section with different dental themes
 const heroImages = [
   '/images/hero/dentist-2589771.jpg',
   '/images/hero/dental-chair-and-equipment-patie.jpg',
   '/images/hero/all-on-4-dental-implants-belfast-8378579.jpg',
+  '/images/hero/dental-clinic-modern-equipment.jpg',
+  '/images/hero/dentist-examining-patient.jpg',
+  '/images/hero/dental-care-professional.jpg',
+  '/images/hero/dental-implants-treatment.jpg',
+  '/images/hero/teeth-whitening-procedure.jpg',
 ];
 
 export const HeroSection = ({
@@ -35,19 +40,33 @@ export const HeroSection = ({
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   
-  // Handle automatic image rotation
+  // Handle automatic image rotation with smooth transitions
   useEffect(() => {
     if (videoSource) return; // Don't rotate if video is being used
     
-    const interval = setInterval(() => {
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-        setIsAnimating(false);
-      }, 1000); // Match this with the CSS transition duration
-    }, 8000); // Change image every 8 seconds
+    const totalImages = heroImages.length;
+    let animationTimeout: NodeJS.Timeout;
+    let interval: NodeJS.Timeout;
     
-    return () => clearInterval(interval);
+    const changeImage = () => {
+      setIsAnimating(true);
+      animationTimeout = setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % totalImages);
+        setIsAnimating(false);
+      }, 800); // Fade out duration
+    };
+    
+    // Start the interval
+    interval = setInterval(changeImage, 6000); // Change image every 6 seconds
+    
+    // Initial delay before starting the animation
+    const startDelay = setTimeout(changeImage, 1000);
+    
+    return () => {
+      clearInterval(interval);
+      clearTimeout(animationTimeout);
+      clearTimeout(startDelay);
+    };
   }, [videoSource]);
   
   // Ensure video plays and loops
@@ -70,29 +89,51 @@ export const HeroSection = ({
         backgroundRepeat: 'no-repeat',
       };
 
+  // Parallax effect on scroll
+  useEffect(() => {
+    if (videoSource) return;
+    
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const parallaxElements = document.querySelectorAll('.parallax-bg');
+      
+      parallaxElements.forEach((element, index) => {
+        const speed = 0.3 + (index * 0.1);
+        const yPos = -(scrollY * speed);
+        (element as HTMLElement).style.transform = `translate3d(0, ${yPos}px, 0)`;
+      });
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [videoSource]);
+
   return (
     <section 
       className={`relative flex items-center justify-center overflow-hidden ${className}`}
       style={{
-        minHeight,
+        minHeight: `calc(${minHeight} + 100px)`, // Extra space for parallax
         ...backgroundStyles,
         position: 'relative',
       }}
     >
-      {/* Background Images with Fade Animation */}
+      {/* Background Images with Fade and Parallax Animation */}
       {!videoSource && heroImages.map((image, index) => (
         <div 
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}
+          className={`parallax-bg absolute inset-0 transition-all duration-1000 ${isAnimating ? 'opacity-0 scale-110' : 'opacity-100 scale-100'}`}
           style={{
             backgroundImage: `url(${image})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             opacity: index === currentImageIndex ? 1 : 0,
-            transition: 'opacity 1s ease-in-out',
+            transition: 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
             zIndex: 0,
+            transform: 'translate3d(0, 0, 0)',
+            willChange: 'transform, opacity',
           }}
+          aria-hidden="true"
         />
       ))}
       
@@ -122,45 +163,45 @@ export const HeroSection = ({
         </div>
       )}
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+      {/* Content with scroll animation */}
+      <div 
+        className="relative z-10 w-full max-w-7xl px-4 sm:px-6 lg:px-8 text-center text-white"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+        style={{
+          transform: 'translate3d(0, 0, 0)',
+          willChange: 'transform, opacity',
+        }}
+      >
         <div className="space-y-6">
           {typeof title === 'string' ? (
             <h1 
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight"
               data-aos="fade-up"
-              data-aos-delay="100"
-              data-aos-duration="800"
+              data-aos-delay="300"
             >
               {title}
             </h1>
           ) : (
-            <div data-aos="fade-up" data-aos-delay="100">
-              {title}
-            </div>
+            title
           )}
           
           {subtitle && (
-            typeof subtitle === 'string' ? (
-              <p 
-                className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto"
-                data-aos="fade-up"
-                data-aos-delay="200"
-                data-aos-duration="800"
-              >
-                {subtitle}
-              </p>
-            ) : (
-              <div data-aos="fade-up" data-aos-delay="200">
-                {subtitle}
-              </div>
-            )
+            <p 
+              className="text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
+              {subtitle}
+            </p>
           )}
           
           {children && (
             <div 
-              data-aos="fade-up" 
-              data-aos-delay="300"
-              data-aos-duration="800"
+              className="mt-8"
+              data-aos="fade-up"
+              data-aos-delay="500"
             >
               {children}
             </div>

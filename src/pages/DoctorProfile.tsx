@@ -58,12 +58,16 @@ const DoctorProfile = () => {
             </Button>
             
             <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="w-full md:w-1/3 lg:w-1/4">
-                <img 
-                  src={doctor.image} 
-                  alt={doctor.name} 
-                  className="rounded-lg shadow-xl w-full h-auto max-w-md mx-auto"
-                />
+              <div className="w-full md:w-1/3 lg:w-1/4 relative group">
+                <div className="relative overflow-hidden rounded-lg shadow-xl bg-gray-100">
+                  <img 
+                    src={doctor.image} 
+                    alt={doctor.name} 
+                    className="w-full h-auto max-w-md mx-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                    style={{ objectPosition: 'center 30%' }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
                 
                 <div className="mt-6 space-y-4">
                   <div className="flex items-center">

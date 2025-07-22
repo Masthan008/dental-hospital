@@ -39,8 +39,8 @@ const Contact = () => {
       title: "Phone Numbers",
       details: [
         { label: "Main Office", value: "+91 94944 44027" },
-        { label: "Emergency Line", value: "+91 94944 44027" },
-        { label: "Insurance Queries", value: "+91 94944 44027" }
+        { label: "Secondary", value: "+91 8499995554" },
+        { label: "Emergency Line", value: "+91 94944 44027" }
       ],
       color: "from-green-500 to-emerald-500"
     },
@@ -49,8 +49,8 @@ const Contact = () => {
       title: "Office Location",
       details: [
         { label: "Clinic", value: "Sri Ananth Dental Hospital" },
-        { label: "Address", value: "Near RTC Complex" },
-        { label: "City", value: "Kurnool, Andhra Pradesh - 518001" }
+        { label: "Address", value: "Opposite RTC Complex, Main Road" },
+        { label: "City", value: "Vikarabad, Telangana 501101" }
       ],
       color: "from-blue-500 to-cyan-500"
     },
@@ -58,9 +58,9 @@ const Contact = () => {
       icon: Clock,
       title: "Office Hours",
       details: [
-        { label: "Monday - Friday", value: "8:00 AM - 6:00 PM" },
-        { label: "Saturday", value: "9:00 AM - 4:00 PM" },
-        { label: "Sunday", value: "Closed" }
+        { label: "Monday - Saturday", value: "9:00 AM - 8:00 PM" },
+        { label: "Sunday", value: "9:00 AM - 1:00 PM" },
+        { label: "Emergency", value: "Available 24/7" }
       ],
       color: "from-purple-500 to-pink-500"
     },
@@ -68,9 +68,9 @@ const Contact = () => {
       icon: Mail,
       title: "Email Addresses",
       details: [
-        { label: "General Info", value: "sriananthdentalhospital@gmail.com" },
-        { label: "Appointments", value: "sriananthdentalhospital@gmail.com" },
-        { label: "Billing", value: "sriananthdentalhospital@gmail.com" }
+        { label: "General Info", value: "dental@sriananthhospital.com" },
+        { label: "Appointments", value: "dental@sriananthhospital.com" },
+        { label: "Billing", value: "dental@sriananthhospital.com" }
       ],
       color: "from-orange-500 to-red-500"
     }
@@ -80,20 +80,20 @@ const Contact = () => {
     {
       icon: Car,
       title: "By Car",
-      description: "Ample parking space available near the clinic. Located near RTC Complex.",
+      description: "Ample parking space available near the clinic. Located opposite RTC Complex.",
       details: ["Parking available nearby", "Wheelchair accessible", "Easy access from main road"]
     },
     {
       icon: Bus,
       title: "Public Transit",
       description: "Well connected by city buses. Bus stand is just a 2-minute walk from the clinic.",
-      details: ["Near Kurnool Bus Stand", "Auto rickshaws available", "Well-connected by public transport"]
+      details: ["Near Vikarabad Bus Stand", "Auto rickshaws available", "Well-connected by public transport"]
     },
     {
       icon: Navigation,
       title: "Navigation",
-      description: "Use GPS coordinates: 15.8287° N, 78.0489° E for precise location.",
-      details: ["Landmark: Near RTC Complex", "Opposite to Police Parade Ground", "Next to Sri Sai Medicals"]
+      description: "Use GPS coordinates: 17.3380° N, 78.4820° E for precise location.",
+      details: ["Landmark: Opposite RTC Complex", "Main Road, Vikarabad", "Near government offices"]
     }
   ];
 

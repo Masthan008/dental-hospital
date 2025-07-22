@@ -40,25 +40,18 @@ const Booking = () => {
 
   const doctors = [
     { 
-      id: "johnson", 
-      name: "Dr. Sarah Johnson", 
+      id: "gireesha", 
+      name: "Dr. Gireesha Reddy", 
       specialty: "General & Cosmetic Dentistry", 
       rating: 4.9,
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop&crop=face"
+      image: "/images/doctors/dr-gireesha-reddy.jpg"
     },
     { 
-      id: "chen", 
-      name: "Dr. Michael Chen", 
-      specialty: "Orthodontics", 
-      rating: 4.8,
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop&crop=face"
-    },
-    { 
-      id: "rodriguez", 
-      name: "Dr. Emily Rodriguez", 
-      specialty: "Pediatric Dentistry", 
+      id: "srujan", 
+      name: "Dr. P Srujan Kumar", 
+      specialty: "Periodontist & Implantologist", 
       rating: 4.9,
-      image: "https://images.unsplash.com/photo-1594824723477-b5b4ed98d8e4?w=100&h=100&fit=crop&crop=face"
+      image: "/images/doctors/dr-srujan-kumar.jpg"
     }
   ];
 
@@ -145,11 +138,13 @@ const Booking = () => {
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-4">
-                      <img 
-                        src={doctor.image} 
-                        alt={doctor.name}
-                        className="w-16 h-16 rounded-full object-cover"
-                      />
+                      <div className="relative w-16 h-16 rounded-full overflow-hidden">
+                        <img 
+                          src={doctor.image} 
+                          alt={doctor.name}
+                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                        />
+                      </div>
                       <div className="flex-1">
                         <h3 className="font-semibold text-gray-900">{doctor.name}</h3>
                         <p className="text-blue-600 font-medium">{doctor.specialty}</p>
