@@ -37,7 +37,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-      <AboutPreview />
       <Footer />
       <FloatingCTA />
     </div>
