@@ -16,31 +16,188 @@ const galleryItems: GalleryItem[] = [
   {
     id: 'clinic-1',
     type: 'clinic',
-    imageUrl: '/images/gallery/clinic-1.jpg',
-    title: 'Modern Dental Office',
-    description: 'Our state-of-the-art facility'
+    imageUrl: '/images/hero/dental-chair-and-equipment-patie.jpg',
+    title: 'Dental Chair & Equipment',
+    description: 'Modern dental equipment for patient comfort.'
   },
-  // Add more clinic images...
-  
+  {
+    id: 'clinic-2',
+    type: 'clinic',
+    imageUrl: '/images/hero/dentist-2589771.jpg',
+    title: 'Clinic Interior',
+    description: 'Clean and welcoming environment.'
+  },
+  {
+    id: 'clinic-3',
+    type: 'clinic',
+    imageUrl: '/images/hero/all-on-4-dental-implants-belfast-8378579.jpg',
+    title: 'Implant Room',
+    description: 'Advanced dental implant procedures.'
+  },
+  // Uploaded gallery images
+  {
+    id: 'gallery-1',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0021.jpg',
+    title: 'Gallery Image 1',
+    description: ''
+  },
+  {
+    id: 'gallery-2',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0022.jpg',
+    title: 'Gallery Image 2',
+    description: ''
+  },
+  {
+    id: 'gallery-3',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0023.jpg',
+    title: 'Gallery Image 3',
+    description: ''
+  },
+  {
+    id: 'gallery-4',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0024.jpg',
+    title: 'Gallery Image 4',
+    description: ''
+  },
+  {
+    id: 'gallery-5',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0025.jpg',
+    title: 'Gallery Image 5',
+    description: ''
+  },
+  {
+    id: 'gallery-6',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0026.jpg',
+    title: 'Gallery Image 6',
+    description: ''
+  },
+  {
+    id: 'gallery-7',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0027.jpg',
+    title: 'Gallery Image 7',
+    description: ''
+  },
+  {
+    id: 'gallery-8',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0028.jpg',
+    title: 'Gallery Image 8',
+    description: ''
+  },
+  {
+    id: 'gallery-9',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0029.jpg',
+    title: 'Gallery Image 9',
+    description: ''
+  },
+  {
+    id: 'gallery-10',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0030.jpg',
+    title: 'Gallery Image 10',
+    description: ''
+  },
+  {
+    id: 'gallery-11',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0031.jpg',
+    title: 'Gallery Image 11',
+    description: ''
+  },
+  {
+    id: 'gallery-12',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0032.jpg',
+    title: 'Gallery Image 12',
+    description: ''
+  },
+  {
+    id: 'gallery-13',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0033.jpg',
+    title: 'Gallery Image 13',
+    description: ''
+  },
+  {
+    id: 'gallery-14',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0034.jpg',
+    title: 'Gallery Image 14',
+    description: ''
+  },
+  {
+    id: 'gallery-15',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0035.jpg',
+    title: 'Gallery Image 15',
+    description: ''
+  },
+  {
+    id: 'gallery-16',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0036.jpg',
+    title: 'Gallery Image 16',
+    description: ''
+  },
+  {
+    id: 'gallery-17',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0037.jpg',
+    title: 'Gallery Image 17',
+    description: ''
+  },
+  {
+    id: 'gallery-18',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0038.jpg',
+    title: 'Gallery Image 18',
+    description: ''
+  },
+  {
+    id: 'gallery-19',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0039.jpg',
+    title: 'Gallery Image 19',
+    description: ''
+  },
+  {
+    id: 'gallery-20',
+    type: 'clinic',
+    imageUrl: '/images/gallery/IMG-20250723-WA0040.jpg',
+    title: 'Gallery Image 20',
+    description: ''
+  },
   // Team images
   {
     id: 'team-1',
     type: 'team',
-    imageUrl: '/images/gallery/team-1.jpg',
-    title: 'Our Expert Team',
-    description: 'Dedicated dental professionals'
+    imageUrl: '/images/doctors/dr-gireesha-reddy.jpg',
+    title: 'Dr. Gireesha Reddy',
+    description: 'BDS, MDS [MBBS]'
   },
-  // Add more team images...
-  
+  {
+    id: 'team-2',
+    type: 'team',
+    imageUrl: '/images/doctors/dr-srujan-kumar.jpg',
+    title: 'Dr. P Srujan Kumar',
+    description: 'BDS, MDS - Periodontist and Implantologist'
+  },
   // Patient images
   {
     id: 'patient-1',
     type: 'patients',
-    imageUrl: '/images/gallery/patient-1.jpg',
+    imageUrl: '/images/hero/dental-chair-and-equipment-patie.jpg',
     title: 'Happy Patient',
-    description: 'Satisfied with their new smile'
-  },
-  // Add more patient images...
+    description: 'Satisfied with their new smile.'
+  }
 ];
 
 export default function Gallery() {
