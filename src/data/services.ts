@@ -49,6 +49,335 @@ export interface Service {
 
 export const services: Service[] = [
   {
+    id: 'orthodontics',
+    slug: 'orthodontics',
+    title: 'Orthodontics',
+    description: 'Straighten your teeth and improve your bite with braces and aligners.',
+    icon: Shield,
+    features: [
+      'Metal Braces',
+      'Ceramic Braces',
+      'Clear Aligners (Invisalign)',
+      'Retainers',
+      'Early Orthodontic Treatment'
+    ],
+    duration: 'Varies',
+    price: 'Starts at ₹25,000',
+    image: '/images/services/ORTHODONTICS - SADH.png',
+    details: [
+      'Orthodontic treatment helps align teeth and jaws for a healthier, more attractive smile.',
+      'We offer traditional braces, ceramic options, and clear aligners for all ages.'
+    ],
+    popular: false
+  },
+  {
+    id: 'pediatric-dentistry',
+    slug: 'pediatric-dentistry',
+    title: 'Pediatric Dentistry',
+    description: 'Gentle dental care for children and teens.',
+    icon: Baby,
+    features: [
+      'Preventive Care',
+      'Sealants',
+      'Fluoride Treatments',
+      'Early Orthodontic Evaluation',
+      'Child-Friendly Environment'
+    ],
+    duration: '30-60 minutes',
+    price: 'Starts at ₹400',
+    image: '/images/services/PEDIATRIC DENTISTRY - SADH.png',
+    details: [
+      'Our pediatric dental team specializes in making visits fun and stress-free for kids.',
+      'We focus on prevention and education for lifelong oral health.'
+    ],
+    popular: false
+  },
+  {
+    id: 'periodontics',
+    slug: 'periodontics',
+    title: 'Periodontics',
+    description: 'Specialized care for gums and supporting structures.',
+    icon: Heart,
+    features: [
+      'Gum Disease Treatment',
+      'Scaling & Root Planing',
+      'Gum Surgery',
+      'Laser Therapy',
+      'Maintenance Programs'
+    ],
+    duration: '45-90 minutes',
+    price: 'Starts at ₹1,500',
+    image: '/images/services/PERIODONTITIS - SADH.png',
+    details: [
+      'Healthy gums are essential for a healthy mouth. Our periodontist provides advanced care for gum disease and related conditions.'
+    ],
+    popular: false
+  },
+  {
+    id: 'dental-checkup',
+    slug: 'dental-checkup',
+    title: 'Dental Checkup',
+    description: 'Routine dental checkups for preventive care and early detection.',
+    icon: Smile,
+    features: [
+      'Oral Examination',
+      'X-rays',
+      'Professional Cleaning',
+      'Oral Cancer Screening'
+    ],
+    duration: '30-45 minutes',
+    price: 'Starts at ₹500',
+    image: '/images/services/DENTAL CHECKUP - SADH.png',
+    details: [
+      'Regular dental checkups help maintain oral health and catch issues early.'
+    ],
+    popular: false
+  },
+  {
+    id: 'dental-fillings',
+    slug: 'dental-fillings',
+    title: 'Dental Fillings',
+    description: 'Restore decayed or damaged teeth with tooth-colored fillings.',
+    icon: Smile,
+    features: [
+      'Composite Fillings',
+      'Amalgam Fillings',
+      'Minimally Invasive',
+      'Natural Appearance'
+    ],
+    duration: '30-60 minutes',
+    price: 'Starts at ₹800',
+    image: '/images/services/DENTAL FILLINGS  - SADH.png',
+    details: [
+      'Dental fillings restore function and aesthetics to damaged teeth.'
+    ],
+    popular: false
+  },
+  {
+    id: 'dental-implants',
+    slug: 'dental-implants',
+    title: 'Dental Implants',
+    description: 'Permanent solution for missing teeth that look and feel natural.',
+    icon: Crown,
+    features: [
+      'Single Tooth Implants',
+      'Implant-Supported Bridges',
+      'All-on-4 Implants',
+      'Bone Grafting',
+      'Sinus Lifts',
+      'Implant Crowns'
+    ],
+    duration: '3-6 months',
+    price: 'From ₹1,999',
+    image: '/images/services/DENTAL IMPLANTS  - SADH.png',
+    details: [
+      'Dental implants are the gold standard for replacing missing teeth, offering a permanent solution that looks, feels, and functions like natural teeth.'
+    ],
+    popular: true
+  },
+  {
+    id: 'dental-restoration',
+    slug: 'dental-restoration',
+    title: 'Dental Restoration',
+    description: 'Restore the function and appearance of damaged teeth.',
+    icon: Smile,
+    features: [
+      'Crowns',
+      'Bridges',
+      'Veneers',
+      'Bonding'
+    ],
+    duration: '60-120 minutes',
+    price: 'Starts at ₹2,000',
+    image: '/images/services/DENTAL RESTORATION - SADH.png',
+    details: [
+      'Dental restorations improve oral health and aesthetics.'
+    ],
+    popular: false
+  },
+  {
+    id: 'dental-veneers',
+    slug: 'dental-veneers',
+    title: 'Dental Veneers',
+    description: 'Thin shells to cover the front surface of teeth for a perfect smile.',
+    icon: Sparkles,
+    features: [
+      'Porcelain Veneers',
+      'Composite Veneers',
+      'Stain Resistant',
+      'Natural Look'
+    ],
+    duration: '2-3 visits',
+    price: 'Starts at ₹10,000',
+    image: '/images/services/DENTAL VENEERS - SADH.png',
+    details: [
+      'Veneers are a cosmetic solution for chips, gaps, and discoloration.'
+    ],
+    popular: false
+  },
+  {
+    id: 'emergency-dentistry',
+    slug: 'emergency-dentistry',
+    title: 'Emergency Dentistry',
+    description: 'Immediate care for dental emergencies when you need it most.',
+    icon: Shield,
+    features: [
+      'Toothache Relief',
+      'Chipped/Broken Teeth',
+      'Knocked-Out Teeth',
+      'Lost Fillings/Crowns',
+      'Dental Abscess',
+      'Broken Dentures'
+    ],
+    duration: '30-120 minutes',
+    price: 'From ₹99',
+    image: '/images/services/EMERGENCY DENTSITRY  - SADH.png',
+    details: [
+      'Dental emergencies can happen at any time, and we are here to help.'
+    ],
+    popular: false
+  },
+  {
+    id: 'laser-dentistry',
+    slug: 'laser-dentistry',
+    title: 'Laser Dentistry',
+    description: 'Advanced dental treatments using laser technology.',
+    icon: Zap,
+    features: [
+      'Laser Gum Treatment',
+      'Laser Whitening',
+      'Minimally Invasive',
+      'Faster Healing'
+    ],
+    duration: '30-60 minutes',
+    price: 'Starts at ₹2,500',
+    image: '/images/services/LASER DENTISTRY  - SADH.png',
+    details: [
+      'Laser dentistry offers precise and comfortable treatments.'
+    ],
+    popular: false
+  },
+  {
+    id: 'maxillofacial-surgery',
+    slug: 'maxillofacial-surgery',
+    title: 'Maxillofacial Surgery',
+    description: 'Surgical procedures for the jaw, face, and mouth.',
+    icon: Shield,
+    features: [
+      'Jaw Surgery',
+      'Facial Trauma',
+      'TMJ Treatment',
+      'Cyst/Tumor Removal'
+    ],
+    duration: 'Varies',
+    price: 'Consult for pricing',
+    image: '/images/services/MAXILLOFACIAL SURGERY - SADH.png',
+    details: [
+      'Maxillofacial surgery treats complex conditions of the face and jaw.'
+    ],
+    popular: false
+  },
+  {
+    id: 'oral-surgery',
+    slug: 'oral-surgery',
+    title: 'Oral Surgery',
+    description: 'Surgical treatments for teeth and mouth conditions.',
+    icon: Shield,
+    features: [
+      'Tooth Extractions',
+      'Biopsies',
+      'Cyst Removal',
+      'Minor Surgeries'
+    ],
+    duration: 'Varies',
+    price: 'Consult for pricing',
+    image: '/images/services/ORAL SURGERY - SADH.png',
+    details: [
+      'Oral surgery is performed for a variety of dental conditions.'
+    ],
+    popular: false
+  },
+  {
+    id: 'root-canal',
+    slug: 'root-canal',
+    title: 'Root Canal',
+    description: 'Treatment to save and restore infected teeth.',
+    icon: Smile,
+    features: [
+      'Pain Relief',
+      'Tooth Preservation',
+      'Quick Recovery',
+      'High Success Rate'
+    ],
+    duration: '60-90 minutes',
+    price: 'Starts at ₹3,000',
+    image: '/images/services/ROOT CANAL  - SADH.png',
+    details: [
+      'Root canal treatment saves teeth that would otherwise be lost.'
+    ],
+    popular: false
+  },
+  {
+    id: 'teeth-cleaning',
+    slug: 'teeth-cleaning',
+    title: 'Teeth Cleaning',
+    description: 'Professional cleaning for healthy teeth and gums.',
+    icon: Smile,
+    features: [
+      'Plaque Removal',
+      'Tartar Removal',
+      'Polishing',
+      'Oral Hygiene Advice'
+    ],
+    duration: '30-45 minutes',
+    price: 'Starts at ₹500',
+    image: '/images/services/TEETH CLEANING  - SADH.png',
+    details: [
+      'Teeth cleaning is essential for oral health and fresh breath.'
+    ],
+    popular: false
+  },
+  {
+    id: 'wisdom-teeth',
+    slug: 'wisdom-teeth',
+    title: 'Wisdom Teeth',
+    description: 'Evaluation and removal of wisdom teeth.',
+    icon: Smile,
+    features: [
+      'Wisdom Tooth Extraction',
+      'Pain Management',
+      'Post-Op Care',
+      'Consultation'
+    ],
+    duration: 'Varies',
+    price: 'Consult for pricing',
+    image: '/images/services/WISDOM TEETH - SADH.png',
+    details: [
+      'Wisdom teeth can cause pain and crowding; removal is often recommended.'
+    ],
+    popular: false
+  },
+  {
+    id: 'bridges',
+    slug: 'bridges',
+    title: 'Dental Bridges',
+    description: 'Replace missing teeth with fixed dental bridges.',
+    icon: Crown,
+    features: [
+      'Fixed Bridges',
+      'Natural Appearance',
+      'Restores Function',
+      'Long-Lasting'
+    ],
+    duration: '2-3 visits',
+    price: 'Starts at ₹8,000',
+    image: '/images/services/BRIDGES - SADH.png',
+    details: [
+      'Dental bridges fill gaps and restore your smile.'
+    ],
+    popular: false
+  },
+  {
     id: 'general-dentistry',
     slug: 'general-dentistry',
     title: 'General Dentistry',
