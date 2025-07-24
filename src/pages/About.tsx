@@ -33,24 +33,7 @@ const About = () => {
     { icon: Shield, title: "Advanced Technology", description: "State-of-the-art equipment" }
   ];
 
-  const values = [
-    {
-      title: "Excellence",
-      description: "We strive for the highest standards in every treatment we provide."
-    },
-    {
-      title: "Compassion",
-      description: "Your comfort and well-being are at the heart of everything we do."
-    },
-    {
-      title: "Innovation",
-      description: "We embrace the latest technology and techniques for better outcomes."
-    },
-    {
-      title: "Integrity",
-      description: "We believe in honest, transparent communication with our patients."
-    }
-  ];
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -141,40 +124,31 @@ const About = () => {
           </div>
         </section>
 
-        {/* Values Section */}
+
+        {/* Why Choose Us Section */}
         <section className="py-20 bg-gradient-to-b from-blue-50 to-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div 
-              className="mt-20 text-center"
-              data-aos="fade-up"
-            >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Core Values</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
-                Guiding principles that shape our practice and define the care we provide
-              </p>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-blue-800 mb-4">Why Choose Us</h2>
+              <h3 className="text-2xl font-semibold text-blue-700 mb-2">We Are Experienced In Making Smiles More Beautiful</h3>
             </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {values.map((value, index) => (
-                <Card 
-                  key={index} 
-                  className="h-full hover:shadow-lg transition-shadow duration-300"
-                  data-aos="fade-up"
-                  data-aos-delay={100 * (index + 1)}
-                >
-                  <CardContent className="p-6">
-                    <div 
-                      className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto"
-                      data-aos="zoom-in"
-                      data-aos-delay={150 * (index + 1)}
-                    >
-                      <Star className="h-6 w-6 text-blue-600" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-center mb-2">{value.title}</h3>
-                    <p className="text-gray-600 text-center">{value.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="space-y-8">
+              <div>
+                <h4 className="text-xl font-bold text-blue-600 mb-1">Expert Care</h4>
+                <p className="text-gray-700">Dr. Gireesha i and her skilled team bring years of experience and expertise in general, cosmetic, and restorative dentistry.</p>
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-blue-600 mb-1">Advanced Technology</h4>
+                <p className="text-gray-700">We use state-of-the-art equipment and modern techniques to offer painless, precise, and effective treatments.</p>
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-blue-600 mb-1">Personalized Treatment Plans</h4>
+                <p className="text-gray-700">Every smile is unique, and so is our approach. We customize treatments to meet your individual dental needs.</p>
+              </div>
+              <div>
+                <h4 className="text-xl font-bold text-blue-600 mb-1">Comfort & Care</h4>
+                <p className="text-gray-700">Your comfort is our priority. Our clinic is designed to create a soothing, stress-free dental experience.</p>
+              </div>
             </div>
           </div>
         </section>
