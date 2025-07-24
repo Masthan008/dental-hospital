@@ -93,6 +93,24 @@ const About = () => {
                 >
                   Meet Our Team <Users className="ml-2 h-4 w-4" />
                 </Button>
+                {/* New Section: Operating Theatres & Lighting */}
+                <div className="mt-12">
+                  <h3 className="text-2xl font-bold text-blue-700 mb-4">Sterile Environment | Anesthesia Options | Ease of Adjustment | Infection Control</h3>
+                  <p className="text-gray-700 mb-4">
+                    While most routine dental treatments can be performed in a dental office or clinic, the use of operating theaters in dentistry is essential for addressing complex oral and maxillofacial issues. These specialized facilities provide a safe and controlled environment for patients to receive advanced surgical care, often resulting in improved oral health and quality of life.
+                  </p>
+                  <p className="text-gray-700 mb-4">
+                    In dental and oral surgery, lighting in the operating theatre plays a crucial role in ensuring optimal visibility and precision during procedures. Here are some key considerations regarding lighting in a dental operating theatre:
+                  </p>
+                  <ul className="list-disc pl-6 space-y-2 text-gray-700">
+                    <li><strong>Illumination Quality:</strong> Dental operating theatres require bright, shadow-free illumination to enable dentists and oral surgeons to work with precision. High-quality lighting systems are essential for clear visualization of the surgical site.</li>
+                    <li><strong>Color Rendering:</strong> Proper color rendering is important in dental lighting to ensure that the surgeon can accurately perceive the colors of tissues and structures in the oral cavity. Accurate color rendering aids in diagnosing and performing procedures effectively.</li>
+                    <li><strong>Adjustable Intensity:</strong> Dental lighting systems often feature adjustable intensity controls, allowing the surgeon to customize the level of illumination according to the specific procedure and their preferences.</li>
+                    <li><strong>Uniform Distribution:</strong> Uniform distribution of light across the surgical field is essential to eliminate shadows and ensure that every detail is visible. Some lights have multiple adjustable panels or angles to achieve this.</li>
+                    <li><strong>Cool Temperatures:</strong> Dental lights are designed to emit cool, white light to prevent overheating of the surgical area and discomfort for the patient and surgical team.</li>
+                    <li><strong>Ease of Adjustment:</strong> The positioning and angle of dental lights should be easily adjustable to provide optimal illumination regardless of the patient’s position or the surgeon’s requirements.</li>
+                  </ul>
+                </div>
               </div>
               <div 
                 className="relative h-96 rounded-xl overflow-hidden shadow-xl"

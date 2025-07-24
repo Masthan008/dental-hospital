@@ -6,6 +6,9 @@ import { FloatingCTA } from "@/components/FloatingCTA";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { doctors } from "@/data/doctors";
+import { FloatingChatBot } from "@/components/FloatingChatBot";
+import WelcomePopup from "@/components/WelcomePopup";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -19,11 +22,20 @@ const cardVariants = {
 // Removed unused custom hook code
 
 const Index = () => {
-  // Removed reference to deleted useSlideIn hook
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100">
       <Header />
       <Hero />
+      {/* Navigation to Services page */}
+      <div className="flex justify-center mt-8">
+        <button
+          onClick={() => navigate('/services')}
+          className="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition"
+        >
+          Explore Our Services
+        </button>
+      </div>
       {/* Our Doctors Section with vertical scroll animation */}
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-4">
@@ -53,6 +65,15 @@ const Index = () => {
       </section>
       <Footer />
       <FloatingCTA />
+      {/* Floating ChatBots on both sides */}
+      <div className="fixed bottom-24 left-4 z-50">
+        <FloatingChatBot />
+      </div>
+      <div className="fixed bottom-24 right-4 z-50">
+        <FloatingChatBot />
+      </div>
+      {/* Welcome Popup */}
+      <WelcomePopup />
     </div>
   );
 };
